@@ -16,8 +16,11 @@ test("renders the page footer with the product name and copyright", () => {
 test("renders an about link in the page footer", () => {
   render(<App />);
   const link = screen.getByRole("link", { name: /about/i });
+  expect(link).toHaveClass("app-footer-link");
   expect(link).toHaveAttribute("href", "/about");
-  expect(screen.getByRole("contentinfo")).toContainElement(link);
+  const footer = screen.getByRole("contentinfo");
+  expect(footer).toContainElement(link);
+  expect(footer).toHaveTextContent("Monsters Rolodex © 2026 about");
 });
 
 test("renders the page footer after the monster card grid", () => {
