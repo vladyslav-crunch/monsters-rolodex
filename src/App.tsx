@@ -42,7 +42,7 @@ const App = () => {
       <h1 className="app-title">Monsters Rolodex</h1>
       <SeacrhBox
         onChangeHandler={onSearchChange}
-        placeholder="search monsters"
+        placeholder="Find a monster..."
         className="monsters-search-box"
       />
       <CardList monsters={filteredMonsters} />
