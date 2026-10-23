@@ -46,6 +46,12 @@ const App = () => {
         className="monsters-search-box"
       />
       <CardList monsters={filteredMonsters} />
+      <footer className="app-footer">
+        Monsters Rolodex © 2026{" "}
+        <a className="app-footer-link" href="/about">
+          about
+        </a>
+      </footer>
     </div>
   );
 };

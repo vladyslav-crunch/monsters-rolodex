@@ -20,3 +20,14 @@ body {
   color: #0ccac4;
   font-family: "Bigelow Rules";
 }
+.app-footer {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  color: #95dada;
+  font-weight: bold;
+}
+.app-footer-link {
+  margin-left: 10px;
+  color: inherit;
+  text-decoration: underline;
+}
