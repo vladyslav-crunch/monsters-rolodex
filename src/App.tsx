@@ -46,6 +46,7 @@ const App = () => {
         className="monsters-search-box"
       />
       <CardList monsters={filteredMonsters} />
+      <footer className="app-footer">Monsters Rolodex © 2026</footer>
     </div>
   );
 };
