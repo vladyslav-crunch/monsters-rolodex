@@ -1,0 +1,36 @@
+.state-panel-wrap {
+  display: flex;
+  justify-content: center;
+  padding: 20px 7.5% 50px;
+}
+.state-panel {
+  width: 100%;
+  max-width: 620px;
+  background-color: #95dada;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 25px 50px 30px;
+}
+.state-panel-title {
+  margin: 0;
+  font-size: 28px;
+}
+.state-panel-text {
+  margin: 10px 0 0;
+  font-size: 16px;
+}
+.state-panel-button {
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background: rgba(7, 27, 82, 1);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  cursor: pointer;
+}
+.state-panel-button:focus-visible {
+  outline: 3px solid rgba(7, 27, 82, 1);
+  outline-offset: 3px;
+}

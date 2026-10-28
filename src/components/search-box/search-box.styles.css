@@ -1,9 +1,28 @@
+.search-box-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 340px;
+  text-align: left;
+}
+.search-box-label {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #ffffff;
+}
 .search-box {
   -webkit-appearance: none;
   border: none;
   outline: none;
   padding: 10px;
-  width: 150px;
+  width: 100%;
   line-height: 30px;
-  margin-bottom: 30px;
+  font-family: inherit;
+  font-size: 16px;
+}
+.search-box:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
 }

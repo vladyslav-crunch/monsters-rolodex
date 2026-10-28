@@ -13,10 +13,27 @@ body {
   );
   text-align: center;
 }
+.app-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  padding: 30px 7.5%;
+  background: rgba(7, 27, 82, 0.55);
+}
 .app-title {
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin: 0;
   font-size: 90px;
+  line-height: 1;
   color: #0ccac4;
   font-family: "Bigelow Rules";
+}
+.monsters-count {
+  margin: 20px 7.5% 0;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  text-align: left;
 }
