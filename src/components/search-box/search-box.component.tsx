@@ -3,17 +3,19 @@ import { ChangeEventHandler } from "react";
 
 
 type SeacrhBoxProps = {
-  className: string; 
+  className: string;
+  value: string;
   placeholder?: string,
   onChangeHandler: ChangeEventHandler<HTMLInputElement>;
 }
 
  
 
-const SeacrhBox = ({ className, placeholder, onChangeHandler } :SeacrhBoxProps ) => (
+const SeacrhBox = ({ className, value, placeholder, onChangeHandler } :SeacrhBoxProps ) => (
   <input
     className={`search-box ${className}`}
     type="search"
+    value={value}
     placeholder={placeholder}
     onChange={onChangeHandler}
   />

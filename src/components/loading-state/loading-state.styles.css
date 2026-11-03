@@ -1,0 +1,52 @@
+.loading-state {
+  width: 85vw;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 25px;
+  background-color: #95dada;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.loading-state-message {
+  margin: 0 0 20px;
+}
+
+.loading-state-dots {
+  display: flex;
+  justify-content: center;
+}
+
+.loading-state-dot {
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: rgba(0, 128, 128, 1);
+  animation: loading-state-pulse 1s ease-in-out infinite;
+}
+
+.loading-state-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loading-state-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes loading-state-pulse {
+  0%,
+  100% {
+    opacity: 0.25;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-state-dot {
+    animation: none;
+  }
+}
