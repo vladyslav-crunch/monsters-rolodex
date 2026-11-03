@@ -1,5 +1,7 @@
 import "./App.css";
 import CardList from "./components/card-list/card-list.component";
+import EmptyState from "./components/empty-state/empty-state.component";
+import LoadingState from "./components/loading-state/loading-state.component";
 import SeacrhBox from "./components/search-box/search-box.component";
 import { useState, ChangeEvent } from "react";
 import { useEffect } from "react";
@@ -16,11 +18,16 @@ const App = () => {
   const [searchFiled, setSearchField] = useState("");
   const [monsters, setMonsters] = useState<Monster[]>([]);
   const [filteredMonsters, setFilterMonsters] = useState(monsters);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchUsers = async () => {
-      const users = await getData<Monster[]>("https://jsonplaceholder.typicode.com/users")
-      setMonsters(users)
+      try {
+        const users = await getData<Monster[]>("https://jsonplaceholder.typicode.com/users")
+        setMonsters(users)
+      } finally {
+        setIsLoading(false);
+      }
     }
     fetchUsers();
   }, []);
@@ -29,6 +36,13 @@ const App = () => {
     const searchFiledString = event.target.value.toLowerCase();
     setSearchField(searchFiledString);
   };
+
+  const onClearSearch = ():void => {
+    setSearchField("");
+  };
+
+  const hasSearchQuery = searchFiled.length > 0;
+  const hasNoMatches = hasSearchQuery && filteredMonsters.length === 0;
 
   useEffect(() => {
     const newfilteredMonsters = monsters.filter((monster) => {
@@ -44,8 +58,15 @@ const App = () => {
         onChangeHandler={onSearchChange}
         placeholder="search monsters"
         className="monsters-search-box"
+        value={searchFiled}
       />
-      <CardList monsters={filteredMonsters} />
+      {isLoading ? (
+        <LoadingState />
+      ) : hasNoMatches ? (
+        <EmptyState query={searchFiled} onClearSearchHandler={onClearSearch} />
+      ) : (
+        <CardList monsters={filteredMonsters} />
+      )}
     </div>
   );
 };
